@@ -114,6 +114,6 @@ async def ad(client, m: Message):
 @Client.on_message(filters.command(["hchi", "hà chi", "", "", ""], prefixes=f"{HNDLR}"))
 async def TW(client, m: Message):
     TW = f"""
-<i>Nói Hà Chi Dễ Thương Đi Rồi Cho Thông Lỗ Nào Ib Chi</i>
+<i>Tuy Chi Không Xinh Nhưng Được Cái Rất Thích Được Đánh Đít Liên Hệ @aniehuchie Nha :3 ^^</i>
 """
     await m.reply(TW)
