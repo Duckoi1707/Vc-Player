@@ -111,9 +111,4 @@ async def ad(client, m: Message):
 """
     await m.reply(AD) 
     
-@Client.on_message(filters.command(["hchi", "hà chi", "", "", ""], prefixes=f"{HNDLR}"))
-async def TW(client, m: Message):
-    TW = f"""
-<i>Tuy Chi Không Xinh Nhưng Được Cái Rất Thích Được Đánh Đít Liên Hệ @aniehuchie Nha :3 ^^</i>
-"""
-    await m.reply(TW)
+
