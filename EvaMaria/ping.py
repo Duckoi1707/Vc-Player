@@ -107,8 +107,10 @@ async def goodnight(client, m: Message):
 @Client.on_message(filters.command(["oggy", "OGGY", "@oggyvn", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
 async def ad(client, m: Message):
     AD = f"""
-<i>BOT ĐƯỢC SỬA ĐỔI BỞI @OGGYVN\nHãy Sử Dụng BOT Văn Minh</i>
+<i>OGGY ĐẸP TRAI VÍP BỜ RỒ </i>
 """
     await m.reply(AD) 
     
-
+    @Client.on_message(filters.command(["test", "", "", "", ""], prefixes=f"{HNDLR}"))
+async def tw(client, m: Message):
+await message.reply_sticker("CAACAgUAAxkBAAEDkfFhyccgiNZKRzLwHfzsF5ojwQ3kwgACrQYAAtVx-VWm4YgP3LWZ8yME")
