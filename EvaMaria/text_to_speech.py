@@ -23,10 +23,10 @@ def convert(text):
 @Client.on_message(filters.command(["tts"], prefixes=f"{HNDLR}"))
 async def text_to_speech(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("__😫Reply to some texts!__")
+        return await message.reply_text("__😫Thực thi eval!__")
     if not message.reply_to_message.text:
-        return await message.reply_text("__❗️Reply to some texts!__")
-    m = await message.reply_text("🔁 Processing...")
+        return await message.reply_text("__❗️Trả lời một số văn bản!__")
+    m = await message.reply_text("🔁 Chế biến...")
     text = message.reply_to_message.text
     try:
         loop = get_running_loop()
