@@ -99,10 +99,10 @@ async def goodevening(client, m: Message):
 
 @Client.on_message(filters.command(["bot", "Gud nt", "gud night", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
 async def goodnight(client, m: Message):
+    
     GN = f"""
-<i>Nhìn Phia Dưới Xem Đại Ca Tao Chửi Nè</i>
+<i>Nhắc Cái Gì Tính Chê Hay Gì Địt Mẹ </i>
 """
-    await message.reply_sticker("CAACAgUAAxkBAAEDkfFhyccgiNZKRzLwHfzsF5ojwQ3kwgACrQYAAtVx-VWm4YgP3LWZ8yME")
     await m.reply(GN)
   
 @Client.on_message(filters.command(["oggy", "OGGY", "@oggyvn", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
@@ -112,3 +112,24 @@ async def ad(client, m: Message):
 """
     await m.reply(AD) 
     
+@Client.on_message(filters.command(["test", "", "", "", ""], prefixes=f"{HNDLR}"))
+async def test(client, m: Message):
+    await m.delete()
+    loli = await m.reply("1")
+    await loli.edit("2")
+    await loli.edit("3")
+    await loli.edit("4")
+    await loli.edit("5")
+    await loli.edit("6")
+    await loli.edit("7")
+    await loli.edit("8")
+    await loli.edit("9")
+    await loli.edit("10")
+    await loli.edit("11")
+    await loli.edit("12")
+    await loli.edit("13")
+    await loli.edit("14")
+    await loli.edit("15")
+    await loli.edit("16")
+    await loli.edit("17")
+    await loli.edit("**Địt Mẹ Chúng Mày**")
