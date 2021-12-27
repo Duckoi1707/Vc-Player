@@ -27,7 +27,7 @@ async def song(client, message: Message):
         )
         return
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching Song 🌚** `{urlissed}`"
+        message.chat.id, f"**🔎 Tìm kiếm bài hát 🌚** `{urlissed}`"
     )
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
@@ -63,12 +63,12 @@ async def song(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(mo, download=True)
     except Exception as e:
-        await pablo.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
+        await pablo.edit(f"**Không tải xuống được** \n**Lỗi :** `{str(e)}`")
         return
     c_time = time.time()
     capy = f"""
-**🎙Song Name:** {thum}
-**🗂️Requested by:** {message.from_user.mention}
+**🎙Tên bài hát:** {thum}
+**🗂️Được yêu cầu bởi:** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
@@ -83,7 +83,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 Tải xuống** `{urlissed}`",
             file_stark,
         ),
     )
@@ -238,7 +238,7 @@ async def vsong(client, message: Message):
     urlissed = get_text(message)
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching video 🎞..** `{urlissed}`"
+        message.chat.id, f"**🔎 Tìm kiếm video 🎞..** `{urlissed}`"
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
@@ -276,8 +276,8 @@ async def vsong(client, message: Message):
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-**📽 Video :** {thum}
-**🔎 Requested by:** {message.from_user.mention}
+**📽 Băng hình :** {thum}
+**🔎 Được yêu cầu bởi:** {message.from_user.mention}
 """
     await client.send_video(
         message.chat.id,
@@ -291,7 +291,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 Tải xuống** `{urlissed}`",
             file_stark,
         ),
     )
