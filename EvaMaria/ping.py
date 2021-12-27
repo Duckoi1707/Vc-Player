@@ -29,7 +29,7 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(filters.command(["king"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ping"], prefixes=f"{HNDLR}"))
 async def ping(client, m: Message):
     start = time()
     current_time = datetime.utcnow()
@@ -38,7 +38,7 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>I'm Online🍀</b> `{delta_ping * 1000:.3f} ms` \n<b>⏳Uptime </b> - `{uptime}`"
+        f"<b>Tôi đang trực tuyến🍀</b> `{delta_ping * 100:.3f} ms` \n<b>⏳Uptime </b> - `{uptime}`"
     )
 
 
@@ -65,26 +65,26 @@ async def restart(client, m: Message):
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
-<i>🤓Hellow {m.from_user.mention}!
+<i>🤓Xin Chào {m.from_user.mention}!
 
-🛠 HELP MENU
-⚡ COMMANDS
-❍ {HNDLR}help - to see a list of commands
-❍ {HNDLR}play [song title | link youtube | reply audio file] - to play a song
-❍ {HNDLR}vplay [video title | link youtube | reply video files] - to play videos
-❍ {HNDLR}playlist to view playlist
-❍ {HNDLR}ping - to check status
-❍ {HNDLR}resume - to continue playing a song or video
-❍ {HNDLR}pause - to pause the playback a song or video 
-❍ {HNDLR}skip - to skip songs or videos
-❍ {HNDLR}end - to end playback</i>
+🛠 HỖ TRỢ MENU
+⚡ LỆNH CƠ BẢN
+❍ {HNDLR}help - để xem danh sách các lệnh
+❍ {HNDLR}play [tên bài hát | liên kết youtube | trả lời tệp âm thanh] - để phát một bài hát
+❍ {HNDLR}vplay [tiêu đề video | liên kết youtube | trả lời tệp video] - để phát video
+❍ {HNDLR}playlist để xem danh sách phát
+❍ {HNDLR}ping - để kiểm tra trạng thái
+❍ {HNDLR}resume - để tiếp tục phát một bài hát hoặc video
+❍ {HNDLR}pause - để tạm dừng phát lại một bài hát hoặc video
+❍ {HNDLR}skip - để bỏ qua các bài hát hoặc video
+❍ {HNDLR}end - để kết thúc phát lại</i>
 """
     await m.reply(HELP)
 
-@Client.on_message(filters.command(["Good morning", "Gud morning", "gud mrng", "ഗുഡ് മോർണിംഗ്"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["đm", "lồn", "cặc", "địt mẹ"], prefixes=f"{HNDLR}"))
 async def goodmorning(client, m: Message):
     GM = f"""
-<i>🍂☕️Gøød Mørning..⏱️ Have a nice day..🙂</i>
+<i>Mẹ Mày Mồm Hư Lắm Nhá Ban Cm Mày Giờ </i>
 """
     await m.reply(GM)
 
@@ -103,3 +103,10 @@ async def goodnight(client, m: Message):
 <i> 😴🛌Gøød Night 🌚</i>
 """
     await m.reply(GN)
+  
+@Client.on_message(filters.command(["oggy", "OGGY", "@oggyvn", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
+async def ad(client, m: Message):
+    AD = f"""
+<i>BOT ĐƯỢC SỬA ĐỔI BỞI @OGGYVN\nHãy Sử Dụng BOT Văn Minh</i>
+"""
+    await m.reply(AD)
