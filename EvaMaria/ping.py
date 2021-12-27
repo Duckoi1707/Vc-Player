@@ -97,11 +97,12 @@ async def goodevening(client, m: Message):
     await m.reply(GE)
 
 
-@Client.on_message(filters.command(["Good Night", "Gud nt", "gud night", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["bot", "Gud nt", "gud night", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
 async def goodnight(client, m: Message):
     GN = f"""
-<i> 😴🛌Gøød Night 🌚</i>
+<i>Nhìn Phia Dưới Xem Đại Ca Tao Chửi Nè</i>
 """
+    await message.reply_sticker("CAACAgUAAxkBAAEDkfFhyccgiNZKRzLwHfzsF5ojwQ3kwgACrQYAAtVx-VWm4YgP3LWZ8yME")
     await m.reply(GN)
   
 @Client.on_message(filters.command(["oggy", "OGGY", "@oggyvn", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
@@ -111,6 +112,3 @@ async def ad(client, m: Message):
 """
     await m.reply(AD) 
     
-    @Client.on_message(filters.command(["test", "", "", "", ""], prefixes=f"{HNDLR}"))
-async def tw(client, m: Message):
-await message.reply_sticker("CAACAgUAAxkBAAEDkfFhyccgiNZKRzLwHfzsF5ojwQ3kwgACrQYAAtVx-VWm4YgP3LWZ8yME")
