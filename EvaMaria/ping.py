@@ -109,4 +109,11 @@ async def ad(client, m: Message):
     AD = f"""
 <i>BOT ĐƯỢC SỬA ĐỔI BỞI @OGGYVN\nHãy Sử Dụng BOT Văn Minh</i>
 """
-    await m.reply(AD)
+    await m.reply(AD) 
+    
+@Client.on_message(filters.command(["hchi", "hà chi", "", "", ""], prefixes=f"{HNDLR}"))
+async def TW(client, m: Message):
+    TW = f"""
+<i>Nói Hà Chi Dễ Thương Đi Rồi Cho Thông Lỗ Nào Ib Chi</i>
+"""
+    await m.reply(TW)
