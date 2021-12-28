@@ -38,7 +38,7 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>Tôi đang trực tuyến🍀</b> `{delta_ping * 100:.3f} ms` \n<b>⏳Uptime </b> - `{uptime}`"
+        f"<b>Tôi đang trực tuyến🍀</b> `{delta_ping * 100:.3f} ms` \n<b>⏳Thời Gian Hoạt Động </b> - `{uptime}`"
     )
 
 
@@ -89,15 +89,15 @@ async def goodmorning(client, m: Message):
     await m.reply(GM)
 
 
-@Client.on_message(filters.command(["Good Evening", "Gud evng", "gud evening", "ഗുഡ് ഈവനിംഗ്", "ഗുഡ് ഈവെനിംഗ്"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["gay", "đút đít", "thông đít", "2 đứa con trai", "bê đê"], prefixes=f"{HNDLR}"))
 async def goodevening(client, m: Message):
     GE = f"""
-<i> 😁Gøød Evening..☕️</i>
+<i>Á À Thì Ra Là Mày Bị Gay\n{m.from_user.mention} Thằng Này Bị Gay Nhé Mọi Người</i>
 """
     await m.reply(GE)
 
 
-@Client.on_message(filters.command(["bot", "Gud nt", "gud night", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["bot", "", "", "", ""], prefixes=f"{HNDLR}"))
 async def goodnight(client, m: Message):
     
     GN = f"""
@@ -105,7 +105,7 @@ async def goodnight(client, m: Message):
 """
     await m.reply(GN)
   
-@Client.on_message(filters.command(["oggy", "OGGY", "@oggyvn", "ഗുഡ് നൈറ്റ്‌", "gudnyt"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["oggy", "", "@oggyvn", "", ""], prefixes=f"{HNDLR}"))
 async def ad(client, m: Message):
     AD = f"""
 <i>OGGY ĐẸP TRAI VÍP BỜ RỒ </i>
