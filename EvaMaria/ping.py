@@ -115,9 +115,7 @@ async def ad(client, m: Message):
 @Client.on_message(filters.command(["rin", "", "", "", ""], prefixes=f"{HNDLR}"))
 async def test(client, m: Message):
     await m.delete()
-   await loli = await m.reply("Đang Chạy... 10.32%
-[█░░░░░░░░░░░░░░░░░░░]
-")
+     loli = await m.reply("Bắt Đầu Khởi Động")
     await loli.edit("Đang Chạy... 20.63%
 [███░░░░░░░░░░░░░░░░░]
 ")
