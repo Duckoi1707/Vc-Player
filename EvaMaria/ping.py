@@ -95,5 +95,5 @@ async def ad(client, m: Message):
 
     @Client.on_message(filters.command(["video", "", "", "", ""], prefixes=f"{HNDLR}"))
 async def video(client, m: Message):
-  await m.reply_video(
-                      video="https://telegra.ph/file/b302f177f0b20c895cb7f.mp4")
+  await m.reply_photo(
+                      photo="https://telegra.ph/file/b302f177f0b20c895cb7f.mp4")
