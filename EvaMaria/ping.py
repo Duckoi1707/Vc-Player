@@ -105,7 +105,9 @@ async def lirik(_, message):
         resp = requests.get(f"https://api-tede.herokuapp.com/api/lirik?l={query}").json()
         result = f"{resp['result']}"
         await rep.edit(result)
-        
+         except Exception:
+        await rep.edit("**Không tìm thấy lời bài hát.** Xin vui lòng cung cấp một tên bài hát hợp lệ !")
+
         
         
         @Client.on_message(filters.command(["ad", "", "ad", "", ""], prefixes=f"{HNDLR}"))
@@ -116,6 +118,3 @@ async def lirik(_, message):
         return await client.send_video(message.chat.id, video=results)
     except Exception:
         await message.reply_text("`Đã xảy ra lỗi LOL...`")
-
-    except Exception:
-        await rep.edit("**Không tìm thấy lời bài hát.** Xin vui lòng cung cấp một tên bài hát hợp lệ !")
