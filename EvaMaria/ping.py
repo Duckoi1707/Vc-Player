@@ -116,21 +116,5 @@ async def ad(client, m: Message):
 async def test(client, m: Message):
     await m.delete()
      loli = await m.reply("Bắt Đầu Khởi Động")
-    await loli.edit("Đang Chạy... 20.63%
-[███░░░░░░░░░░░░░░░░░]
-")
-    await loli.edit("Đang Chạy... 40.28%
-[█████░░░░░░░░░░░░░░░]
-")
-    await loli.edit("Đang Chạy... 58.28%
-[█████████░░░░░░░░░░░]
-")
-    await loli.edit("Đang Chạy... 86.21%
-[███████████████░░░░░]")
-    await loli.edit("Đang Chạy... 93.50%
-[█████████████████░░░]")
-    await loli.edit("Đang Chạy... 99.99%
-[████████████████████]
-")
-   
+    await loli.edit("Đang Chạy... 20.63")
     await loli.edit("**Thầng Lồn Rin Đéo Có Chim Bị Tật Nguyền **")
