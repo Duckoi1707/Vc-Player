@@ -42,25 +42,6 @@ async def ping(client, m: Message):
     )
 
 
-@Client.on_message(
-    filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=f"{HNDLR}")
-)
-async def restart(client, m: Message):
-    await m.delete()
-    loli = await m.reply("1")
-    await loli.edit("2")
-    await loli.edit("3")
-    await loli.edit("4")
-    await loli.edit("5")
-    await loli.edit("6")
-    await loli.edit("7")
-    await loli.edit("8")
-    await loli.edit("9")
-    await loli.edit("**🖥️System🖱️Restarted⌨️**")
-    os.execl(sys.executable, sys.executable, *sys.argv)
-    quit()
-
-
 @Client.on_message(filters.command(["help"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
@@ -84,7 +65,7 @@ async def help(client, m: Message):
 @Client.on_message(filters.command(["đm", "lồn", "cặc", "địt mẹ"], prefixes=f"{HNDLR}"))
 async def goodmorning(client, m: Message):
     GM = f"""
-<i>Mẹ Mày Mồm Hư Lắm Nhá Ban Cm Mày Giờ </i>
+**Sống Ở Xã Hội Này Phải Văn Minh Lịch Sự Một Tí Thì Mới Được Tôn Trọng Chứ Suốt Ngày Ăn Rồi Chửi Tục Đéo Khá Đc Đâu Con Ạ =))**
 """
     await m.reply(GM)
 
@@ -101,14 +82,14 @@ async def goodevening(client, m: Message):
 async def goodnight(client, m: Message):
     
     GN = f"""
-<i>Nhắc Cái Gì Tính Chê Hay Gì Địt Mẹ </i>
+<i>Nếu Như Mày Có Ý Định Chê Bot Thì Nín Tao Bắt Quả Tang Mày Rồi  </i>
 """
     await m.reply(GN)
   
 @Client.on_message(filters.command(["oggy", "", "@oggyvn", "", ""], prefixes=f"{HNDLR}"))
 async def ad(client, m: Message):
     AD = f"""
-<i>OGGY ĐẸP TRAI VÍP BỜ RỒ </i>
+<i> OGGYVN Đẹp Trai Bán VIP Uy tín Ủng Hộ Nó Cho Có Phí Đưa Bạn Gái Đi Nhà Nghỉ </i>
 """
     await m.reply(AD) 
     
