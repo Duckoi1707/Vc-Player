@@ -93,28 +93,3 @@ async def ad(client, m: Message):
 """
     await m.reply(AD) 
     
-    
-@Client.on_message(filters.command(["lyric", "", "lyrics", "", ""], prefixes=f"{HNDLR}"))
-async def lirik(_, message):
-    try:
-        if len(message.command) < 2:
-            await message.reply_text("**Cung cấp cho một tên lời bài hát quá!**")
-            return
-        query = message.text.split(None, 1)[1]
-        rep = await message.reply_text("🔎 **Tìm kiếm lời bài hát...**")
-        resp = requests.get(f"https://api-tede.herokuapp.com/api/lirik?l={query}").json()
-        result = f"{resp['result']}"
-        await rep.edit(result)
-         except Exception:
-        await rep.edit("**Không tìm thấy lời bài hát.** Xin vui lòng cung cấp một tên bài hát hợp lệ !")
-
-        
-        
-        @Client.on_message(filters.command(["ad", "", "ad", "", ""], prefixes=f"{HNDLR}"))
-        async def asupan(client, message):
-    try:
-        resp = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
-        results = f"{resp['url']}"
-        return await client.send_video(message.chat.id, video=results)
-    except Exception:
-        await message.reply_text("`Đã xảy ra lỗi LOL...`")
