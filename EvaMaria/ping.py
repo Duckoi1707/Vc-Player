@@ -112,24 +112,27 @@ async def ad(client, m: Message):
 """
     await m.reply(AD) 
     
-@Client.on_message(filters.command(["test", "", "", "", ""], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["rin", "", "", "", ""], prefixes=f"{HNDLR}"))
 async def test(client, m: Message):
     await m.delete()
-    loli = await m.reply("1")
-    await loli.edit("2")
-    await loli.edit("3")
-    await loli.edit("4")
-    await loli.edit("5")
-    await loli.edit("6")
-    await loli.edit("7")
-    await loli.edit("8")
-    await loli.edit("9")
-    await loli.edit("10")
-    await loli.edit("11")
-    await loli.edit("12")
-    await loli.edit("13")
-    await loli.edit("14")
-    await loli.edit("15")
-    await loli.edit("16")
-    await loli.edit("17")
-    await loli.edit("**Địt Mẹ Chúng Mày**")
+    loli = await m.reply("Đang Chạy... 10.32%
+[█░░░░░░░░░░░░░░░░░░░]
+")
+    await loli.edit("Đang Chạy... 20.63%
+[███░░░░░░░░░░░░░░░░░]
+")
+    await loli.edit("Đang Chạy... 40.28%
+[█████░░░░░░░░░░░░░░░]
+")
+    await loli.edit("Đang Chạy... 58.28%
+[█████████░░░░░░░░░░░]
+")
+    await loli.edit("Đang Chạy... 86.21%
+[███████████████░░░░░]")
+    await loli.edit("Đang Chạy... 93.50%
+[█████████████████░░░]")
+    await loli.edit("Đang Chạy... 99.99%
+[████████████████████]
+")
+   
+    await loli.edit("**Thầng Lồn Rin Đéo Có Chim Bị Tật Nguyền **")
