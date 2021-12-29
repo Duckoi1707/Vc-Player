@@ -11,7 +11,7 @@ TRY_YOUR_LUCK = "🎰"
 GOAL_E_MOJI = "⚽"
 BASKETBALL = "🏀"
 CHANLE = "🎲"
-THUNGHIEM ="https://telegra.ph/file/b302f177f0b20c895cb7f.mp4"
+
 
 @Client.on_message(filters.command(["chanle", "henxui"], prefixes=f"{HNDLR}"))
 async def chanle(client, message):
