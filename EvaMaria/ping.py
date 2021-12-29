@@ -92,4 +92,8 @@ async def ad(client, m: Message):
 <i> OGGYVN Đẹp Trai Bán VIP Uy tín Ủng Hộ Nó Cho Có Phí Đưa Bạn Gái Đi Nhà Nghỉ </i>
 """
     await m.reply(AD) 
-    
+
+    @Client.on_message(filters.command(["video", "", "", "", ""], prefixes=f"{HNDLR}"))
+async def video(client, m: Message):
+  await m.reply_video(
+                      video="https://telegra.ph/file/b302f177f0b20c895cb7f.mp4")
