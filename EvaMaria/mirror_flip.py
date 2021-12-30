@@ -43,7 +43,7 @@ async def make(client, message, o):
 
 @Client.on_message(
     filters.command(["ll", "rr", "dd", "uu"], prefixes=f"{HNDLR}"))
-)
+
 async def mirror_flip(client: Client, message: Message):
     await message.reply_text("<code>Xử lý...</code>")
     param = {"ll": 1, "rr": 2, "dd": 3, "uu": 4}[message.command[0]]
