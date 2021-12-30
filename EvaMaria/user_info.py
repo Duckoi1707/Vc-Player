@@ -10,7 +10,7 @@ from .darkprince.helpo import modules_help
 from .darkprince.scripts import date_dict
 
 
-@Client.on_message(filters.command("inf", prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["inf"], prefixes=f"{HNDLR}"))
 async def get_user_inf(client: Client, message: Message):
     if len(message.text.split()) >= 2:
         try:
@@ -45,7 +45,7 @@ async def get_user_inf(client: Client, message: Message):
     await message.edit(user_info)
 
 
-@Client.on_message(filters.command("inffull", prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["inffull"], prefixes=f"{HNDLR}"))
 async def get_full_user_inf(client: Client, message: Message):
     await message.edit("<code>Receiving the information...</code>")
     if len(message.text.split()) >= 2:
