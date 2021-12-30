@@ -1,17 +1,12 @@
 import traceback
 from asyncio import get_running_loop
 from io import BytesIO
-
-from config import HNDLR
-
-from .darkprince.helpo import modules_help
-
 from gtts import gTTS
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
 from config import HNDLR
 
+from .darkprince.helpo import modules_help
 
 def convert(text):
     audio = BytesIO()
@@ -42,29 +37,28 @@ async def text_to_speech(_, message: Message):
         es = traceback.format_exc()
         print(es)
 
-@Client.on_message(filters.command(["block"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ban"], prefixes=f"{HNDLR}"))
 async def block_True(client: Client, message: Message):
     try:
-        user_id = message.command[1]
+        user_id = message.command
         await client.block_user(user_id)
         await message.edit(
-            f"<b>😡 The <a href='tg://user?id={user_id}'>user</a> is now blacklisted!</b>"
+            b"Đã Cấm Người Dùng"
         )
     except Exception as e:
-        await message.edit(f"<b>😨 Ooops:</b> <code>{e}</code>")
+        await message.edit(b"<b>😨 Ooops:</b> <code>{e}</code>")
 
 
-@Client.on_message(filters.command(["unblock"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["unban"], prefixes=f"{HNDLR}"))
 async def unblock(client: Client, message: Message):
     try:
-        user_id = message.command[1]
+        user_id = message.command
         await client.unblock_user(user_id)
         await message.edit(
-            f"<b>☺️ <a href='tg://user?id={user_id}'>User</a> removed from the blacklist!</b>"
+            b"Đã Gỡ Mọi Lệnh Cấm"
         )
     except Exception as e:
-        await message.edit(f"<b>😰 Oops:</b> <code>{e}</code>")
-
+        await message.edit(b"<b>😰 Oops:</b> <code>{e}</code>")
 
 modules_help.append(
     {
