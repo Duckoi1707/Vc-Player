@@ -33,7 +33,7 @@ async def ghoul_counter(c: Client, m: Message):
         await message.edit_text(prettify(counter))
         await sleep(1)
 
-    await message.edit_text("🤷‍♂️")
+    await message.edit_text("**Nhìn Ăn Lồn À**")
 
 
 modules_help.append({"counting": [{"10": "counting from 10 to 0"}]})
