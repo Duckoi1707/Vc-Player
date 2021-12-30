@@ -1,11 +1,13 @@
 import traceback
 from asyncio import get_running_loop
 from io import BytesIO
+
+from googletrans import Translator
 from gtts import gTTS
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import HNDLR
 
+from config import HNDLR
 
 
 def convert(text):
@@ -21,10 +23,10 @@ def convert(text):
 @Client.on_message(filters.command(["tts"], prefixes=f"{HNDLR}"))
 async def text_to_speech(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("__😫Thực thi eval!__")
+        return await message.reply_text("__😫Reply to some texts!__")
     if not message.reply_to_message.text:
-        return await message.reply_text("__❗️Trả lời một số văn bản!__")
-    m = await message.reply_text("🔁 Chế biến...")
+        return await message.reply_text("__❗️Reply to some texts!__")
+    m = await message.reply_text("🔁 Processing...")
     text = message.reply_to_message.text
     try:
         loop = get_running_loop()
@@ -36,5 +38,3 @@ async def text_to_speech(_, message: Message):
         await m.edit(str(e))
         es = traceback.format_exc()
         print(es)
-
-
