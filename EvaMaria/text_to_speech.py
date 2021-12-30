@@ -37,34 +37,4 @@ async def text_to_speech(_, message: Message):
         es = traceback.format_exc()
         print(es)
 
-@Client.on_message(filters.command(["ban"], prefixes=f"{HNDLR}"))
-async def block_True(client: Client, message: Message):
-    try:
-        user_id = message.command
-        await client.block_user(user_id)
-        await message.edit(
-            b"Đã Cấm Người Dùng"
-        )
-    except Exception as e:
-        await message.edit(b"<b>😨 Ooops:</b> <code>{e}</code>")
 
-
-@Client.on_message(filters.command(["unban"], prefixes=f"{HNDLR}"))
-async def unblock(client: Client, message: Message):
-    try:
-        user_id = message.command
-        await client.unblock_user(user_id)
-        await message.edit(
-            b"Đã Gỡ Mọi Lệnh Cấm"
-        )
-    except Exception as e:
-        await message.edit(b"<b>😰 Oops:</b> <code>{e}</code>")
-
-modules_help.append(
-    {
-        "blacklist": [
-            {"block [user_id]*": "Block user"},
-            {"unblock [user_id]*": "Unblock user"},
-        ]
-    }
-)
