@@ -12,7 +12,7 @@ async def block_True(client: Client, message: Message):
         user_id = message.command[1]
         await client.block_user(user_id)
         await message.reply_text(
-            f"Bạn Đã Bị Đưa Vào Danh Sách Đen {user_id}"
+            f"<b>😡 The <a href='tg://user?id={user_id}'>user</a> bây giờ đã được đưa vào danh sách đen!</b>"
         )
     except Exception as e:
         await message.reply_text(f"Lỗi")
@@ -24,7 +24,7 @@ async def unblock(client: Client, message: Message):
         user_id = message.command[1]
         await client.unblock_user(user_id)
         await message.reply_text(
-            f"{user_id} Đã Được Mở Lại"
+            f"<b>☺️ <a href='tg://user?id={user_id}'>User</a> removed from the blacklist!</b>"
         )
     except Exception as e:
         await message.reply_text(f"Lỗi Vui Lòng Thử Lại")
