@@ -11,11 +11,11 @@ from config import HNDLR, SUDO_USERS
 # System Uptime
 START_TIME = datetime.utcnow()
 TIME_DURATION_UNITS = (
-    ('Week', 60 * 60 * 24 * 7),
-    ('Day', 60 * 60 * 24),
-    ('Hour', 60 * 60),
-    ('Min', 60),
-    ('Sec', 1)
+    ('Tuần', 60 * 60 * 24 * 7),
+    ('Ngày', 60 * 60 * 24),
+    ('Giờ', 60 * 60),
+    ('Phút', 60),
+    ('Giây', 1)
 )
 
 async def _human_time_duration(seconds):
@@ -38,7 +38,7 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>Tôi đang trực tuyến🍀</b> `{delta_ping * 100:.3f} ms` \n<b>⏳Thời Gian Hoạt Động </b> - `{uptime}`"
+        f"<b>Tốc Độ Của Bot Là🍀</b> `{delta_ping * 100:.3f} ms`"
     )
 
 
@@ -47,7 +47,6 @@ async def help(client, m: Message):
     await m.delete()
     HELP = f"""
 <i>🤓Xin Chào {m.from_user.mention}!
-
 🛠 HỖ TRỢ MENU
 ⚡ LỆNH CƠ BẢN
 ❍ {HNDLR}help - để xem danh sách các lệnh
@@ -92,4 +91,11 @@ async def ad(client, m: Message):
 <i> OGGYVN Đẹp Trai Bán VIP Uy tín Ủng Hộ Nó Cho Có Phí Đưa Bạn Gái Đi Nhà Nghỉ </i>
 """
     await m.reply(AD) 
+    
+    @Client.on_message(filters.command(["Check", "", "", "", ""], prefixes=f"{HNDLR}"))
+async def ad(client, m: Message):
+    ON = f"""
+**Trạng Thái BOT : Hoạt Động ✅** \n<b>⏳ Hoạt Động Được </b> - `{uptime}`<b>
+"""
+    await m.reply(ON) 
     
