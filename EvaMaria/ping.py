@@ -38,7 +38,7 @@ async def ping(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m_reply.edit(
-        f"<b>Tốc Độ Của Bot Là🍀</b> `{delta_ping * 100:.3f} ms`\n<b>⏳ Hoạt Động Được </b> - `{uptime}`<b>"
+        f"<b>Tốc Độ Của Bot Là🍀</b> `{delta_ping * 100:.3f} ms`\n<b>⏳ Hoạt Động Được </b> - `{uptime}`"
     )
 
 
