@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import HNDLR
 
-from .darkprince.helpo import modules_help
+
 
 def convert(text):
     audio = BytesIO()
