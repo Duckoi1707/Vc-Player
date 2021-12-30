@@ -33,7 +33,7 @@ async def afk(client, message):
         reason = message.text.split(" ", maxsplit=1)[1]
     else:
         reason = "None"
-    await message.reply_text("<b>I'm going afk</b>")
+    await message.reply_text("<b>Tôi đang đi afk</b>")
 
 
 @Client.on_message(filters.command(["unafk"], prefixes=f"{HNDLR}"))
@@ -42,7 +42,7 @@ async def unafk(client, message):
         global start, end
         end = datetime.datetime.now().replace(microsecond=0)
         afk_time = end - start
-        await message.reply_text(f"<b>I'm not AFK anymore.\nI was afk {afk_time}</b>")
+        await message.reply_text(f"<b>Tôi không AFK nữa.\nTôi đã AFK {afk_time}</b>")
         client.remove_handler(*handler)
     except NameError:
         await message.reply_text("<b>You weren't afk</b>")
