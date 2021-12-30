@@ -22,7 +22,7 @@ async def afk_handler(client, message):
         pass
 
 
-@Client.on_message(filters.command("afk", prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["afk"], prefixes=f"{HNDLR}"))
 async def afk(client, message):
     global start, end, handler, reason
     start = datetime.datetime.now().replace(microsecond=0)
@@ -36,7 +36,7 @@ async def afk(client, message):
     await message.edit("<b>I'm going afk</b>")
 
 
-@Client.on_message(filters.command("unafk", prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["unafk"], prefixes=f"{HNDLR}"))
 async def unafk(client, message):
     try:
         global start, end
