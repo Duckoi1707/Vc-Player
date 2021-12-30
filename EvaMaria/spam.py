@@ -8,9 +8,7 @@ from config import HNDLR
 from .darkprince.helpo import modules_help
 
 
-@Client.on_message(
-    filters.user(SUDO_USERS) & filters.command("statspam", prefixes=f"{HNDLR}")
-)
+@Client.on_message(filters.command("statspam", prefixes=f"{HNDLR}") & filters.me)
 async def statspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
@@ -23,9 +21,7 @@ async def statspam(client: Client, message: Message):
         await asyncio.sleep(0.1)
 
 
-@Client.on_message(
-    filters.user(SUDO_USERS) & filters.command("spam", prefixes=f"{HNDLR}")
-)
+@Client.on_message(filters.command("spam", prefixes=f"{HNDLR}") & filters.me)
 async def spam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
@@ -46,9 +42,7 @@ async def spam(client: Client, message: Message):
         await asyncio.sleep(0.15)
 
 
-@Client.on_message(
-    filters.user(SUDO_USERS) & filters.command("fastspam", prefixes=f"{HNDLR}")
-)
+@Client.on_message(filters.command("fastspam", prefixes=f"{HNDLR}") & filters.me)
 async def fastspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
@@ -69,9 +63,7 @@ async def fastspam(client: Client, message: Message):
         await asyncio.sleep(0.02)
 
 
-@Client.on_message(
-    filters.user(SUDO_USERS) & filters.command("slowspam", prefixes=f"{HNDLR}")
-)
+@Client.on_message(filters.command("slowspam", prefixes=f"{HNDLR}") & filters.me)
 async def slowspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
