@@ -63,7 +63,7 @@ async def help(client, m: Message):
     await m.reply(HELP)
 
 @Client.on_message(filters.command(["đm", "lồn", "cặc", "địt mẹ"], prefixes=f"{HNDLR}"))
-async def goodmorning(client, m: Message):
+async def GM(client, m: Message):
     GM = f"""
 **Sống Ở Xã Hội Này Phải Văn Minh Lịch Sự Một Tí Thì Mới Được Tôn Trọng Chứ Suốt Ngày Ăn Rồi Chửi Tục Đéo Khá Đc Đâu Con Ạ =))**
 """
@@ -71,7 +71,7 @@ async def goodmorning(client, m: Message):
 
 
 @Client.on_message(filters.command(["gay", "đút đít", "thông đít", "2 đứa con trai", "bê đê"], prefixes=f"{HNDLR}"))
-async def goodevening(client, m: Message):
+async def GE(client, m: Message):
     GE = f"""
 <i>Á À Thì Ra Là Mày Bị Gay\n{m.from_user.mention} Thằng Này Bị Gay Nhé Mọi Người</i>
 """
