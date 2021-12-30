@@ -12,10 +12,10 @@ async def block_True(client: Client, message: Message):
         user_id = message.command[1]
         await client.block_user(user_id)
         await message.edit(
-            f"**Bạn Đã Bị Đưa Vào Danh Sách Đen**"
+            f"Bạn Đã Bị Đưa Vào Danh Sách Đen"
         )
     except Exception as e:
-        await message.edit(f"**Lỗi : Bạn Phải Tag Username Hoặc ID Người Dùng**") 
+        await message.edit(f"Lỗi : Bạn Phải Tag Username Hoặc ID Người Dùng") 
 
 
 @Client.on_message(filters.command(["unblock"], prefixes=f"{HNDLR}") & filters.me)
@@ -24,7 +24,7 @@ async def unblock(client: Client, message: Message):
         user_id = message.command[1]
         await client.unblock_user(user_id)
         await message.edit(
-            f"**Bạn Đã Được Mở Lại**"
+            f"Bạn Đã Được Mở Lại"
         )
     except Exception as e:
         await message.edit(f"Bạn Không Đủ Quyền Hạn")
