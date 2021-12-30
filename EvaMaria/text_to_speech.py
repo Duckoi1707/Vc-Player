@@ -42,7 +42,7 @@ async def text_to_speech(_, message: Message):
         es = traceback.format_exc()
         print(es)
 
-@Client.on_message(filters.command(["block"], prefixes=f"{HNDLR}") & filters.me)
+@Client.on_message(filters.command(["block"], prefixes=f"{HNDLR}"))
 async def block_True(client: Client, message: Message):
     try:
         user_id = message.command[1]
@@ -54,7 +54,7 @@ async def block_True(client: Client, message: Message):
         await message.edit(f"<b>😨 Ooops:</b> <code>{e}</code>")
 
 
-@Client.on_message(filters.command(["unblock"], prefixes=f"{HNDLR}") & filters.me)
+@Client.on_message(filters.command(["unblock"], prefixes=f"{HNDLR}"))
 async def unblock(client: Client, message: Message):
     try:
         user_id = message.command[1]
