@@ -97,5 +97,7 @@ async def ad(client, m: Message):
     ON = f"""
 **Trạng Thái BOT : Hoạt Động ✅**
 """
+    ON = f"""⚡"""
+    
     await m.reply(ON) 
     
