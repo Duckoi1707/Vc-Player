@@ -17,7 +17,7 @@ from .darkprince.helpo import modules_help
 @Client.on_message(filters.command("imadmin", prefixes=f"{HNDLR}"))
 async def ownlist(client: Client, message: Message):
     tstart = perf_counter()
-    await message.reply_text("<code>Đang truy xuất thông tin ... (sẽ mất một chút thời gian)</code>")
+   return await message.reply_text("<code>Đang truy xuất thông tin ... (sẽ mất một chút thời gian)</code>")
     chatlist = []
     try:
         _ = await client.send(GetAllChats(except_ids=[]))
