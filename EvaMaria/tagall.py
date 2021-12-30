@@ -2,19 +2,29 @@ import asyncio
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
+
 from config import HNDLR
 
+from .darkprince.helpo import modules_help
+
+
 @Client.on_message(filters.command("tagall", prefixes=f"{HNDLR}") & filters.me)
-async def tagall(client, message):
-    await message.reply("`Processing.....`")
-    sh = get_text(message)
-    if not sh:
-        sh = "Hi!"
-    mentions = ""
-    async for member in client.iter_chat_members(message.chat.id):
-        mentions += member.user.mention + " "
-    n = 4096
-    kk = [mentions[i : i + n] for i in range(0, len(mentions), n)]
-    for i in kk:
-        j = f"<b>{sh}</b> \n{i}"
-        await client.send_message(message.chat.id, j, parse_mode="html")
+async def tagall(client: Client, message: Message):
+    await message.delete()
+    chat_id = message.chat.id
+    string = ""
+    limit = 1
+    icm = client.iter_chat_members(chat_id)
+    async for member in icm:
+        tag = member.user.username
+        if limit <= 10:
+            string += f"@{tag}\n" if tag != None else f"{member.user.mention}\n"
+            limit += 1
+        else:
+            await client.send_message(chat_id, text=string)
+            limit = 1
+            string = ""
+            await asyncio.sleep(2)
+
+
+modules_help.append({"tagall": [{"tagall": "Tag all members"}]})
