@@ -1,8 +1,8 @@
-# BOT USER TELEGRAM
+# BOT
 # Telegram TRÒ CHUYỆN / PHÁT NHẠC
 
 
-## How To Get String
+## LẤY String 
 [![stringsession](https://img.shields.io/badge/repl.it-generateStringName-yellowgreen)](https://repl.it/@subinps/getStringName)
 
 ## How To Host
