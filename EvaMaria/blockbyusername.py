@@ -6,7 +6,9 @@ from config import HNDLR
 from .darkprince.helpo import modules_help
 
 
-@Client.on_message(filters.command(["block"], prefixes=f"{HNDLR}") & filters.me)
+@Client.on_message(
+    filters.user(SUDO_USERS) & filters.command(["block"], prefixes=f"{HNDLR}")
+)
 async def block_True(client: Client, message: Message):
     try:
         user_id = message.command[1]
@@ -18,7 +20,9 @@ async def block_True(client: Client, message: Message):
         await message.edit(f"Lỗi : Bạn Phải Tag Username Hoặc ID Người Dùng") 
 
 
-@Client.on_message(filters.command(["unblock"], prefixes=f"{HNDLR}") & filters.me)
+@Client.on_message(
+    filters.user(SUDO_USERS) & filters.command(["unblock"], prefixes=f"{HNDLR}")
+)
 async def unblock(client: Client, message: Message):
     try:
         user_id = message.command[1]
