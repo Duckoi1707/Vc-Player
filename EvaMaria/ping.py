@@ -6,6 +6,8 @@ from time import time
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+from pyrogram import Client, filters
+
 from config import HNDLR, SUDO_USERS
 
 # System Uptime
@@ -69,6 +71,17 @@ async def GM(client, m: Message):
 """
     await m.reply(GM)
 
+    @Client.on_message(filters.command(["volume"], prefixes=f"{HNDLR}"))
+async def change_volume(client, message):
+    range = message.command[1]
+    chat_id = message.chat.id
+    try:
+       await callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
+       await message.reply(f"✅ **Volume SetTo:** ```{range}%```")
+    except Exception as e:
+       await message.reply(f"Thất Bại")
+     
+            
 
 @Client.on_message(filters.command(["gay", "đút đít", "thông đít", "2 đứa con trai", "bê đê"], prefixes=f"{HNDLR}"))
 async def GE(client, m: Message):
