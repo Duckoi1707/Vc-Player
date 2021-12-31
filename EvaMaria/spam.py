@@ -22,7 +22,8 @@ async def statspam(client: Client, message: Message):
         await asyncio.sleep(0.1)
         await msg.delete()
         await asyncio.sleep(0.1)
-
+if not message.reply_to_message:
+        return await message.reply_text("Bạn Không Có Quyền Để Thực Hiện")
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command("spam", prefixes=f"{HNDLR}")
