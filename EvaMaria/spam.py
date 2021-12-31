@@ -22,8 +22,7 @@ async def statspam(client: Client, message: Message):
         await asyncio.sleep(0.1)
         await msg.delete()
         await asyncio.sleep(0.1)
- await message.reply_text("Bạn Không Có Quyền Để Thực Hiện")
-
+ 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command("spam", prefixes=f"{HNDLR}")
 )
@@ -45,7 +44,7 @@ async def spam(client: Client, message: Message):
     for _ in range(quantity):
         await client.send_message(message.chat.id, spam_text)
         await asyncio.sleep(0.15)
-await message.reply_text("Bạn Không Có Quyền Để Thực Hiện")
+
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command("fastspam", prefixes=f"{HNDLR}")
@@ -68,7 +67,6 @@ async def fastspam(client: Client, message: Message):
     for _ in range(quantity):
         await client.send_message(message.chat.id, spam_text)
         await asyncio.sleep(0.02)
-await message.reply_text("Bạn Không Có Quyền Để Thực Hiện")
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command("slowspam", prefixes=f"{HNDLR}")
@@ -91,7 +89,7 @@ async def slowspam(client: Client, message: Message):
     for _ in range(quantity):
         await client.send_message(message.chat.id, spam_text)
         await asyncio.sleep(0.9)
-await message.reply_text("Bạn Không Có Quyền Để Thực Hiện")
+
 
 modules_help.append(
     {
