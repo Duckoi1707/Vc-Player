@@ -22,6 +22,7 @@ async def statspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("spam", prefixes=f"{HNDLR}"))
+@sudo_users_only
 async def spam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
