@@ -300,21 +300,4 @@ async def vsong(client, message: Message):
         if files and os.path.exists(files):
             os.remove(files)
             
-            
-            
-            @Client.on_message(filters.command(["lyrics"], prefixes=f"{HNDLR}"))
-async def lyrics(client, message: Message):
-    try:
-        if len(message.command) < 2:
-            await message.reply_text("» **give a lyric name too.**")
-            return
-        query = message.text.split(None, 1)[1]
-        rep = await message.reply_text("🔎 **Đang Tìm Kiếm...**")
-        resp = requests.get(
-            f"https://api-tede.herokuapp.com/api/lirik?l={query}"
-        ).json()
-        result = f"{resp['data']}"
-        await rep.edit(result)
-    except Exception:
-        await message.reply_text("❌ **Lỗi**")
-        
+         
