@@ -9,6 +9,7 @@ from .darkprince.helpo import modules_help
 
 
 @Client.on_message(filters.command("statspam", prefixes=f"{HNDLR}"))
+@sudo_users_only
 async def statspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
@@ -44,6 +45,7 @@ async def spam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("fastspam", prefixes=f"{HNDLR}"))
+@sudo_users_only
 async def fastspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
@@ -65,6 +67,7 @@ async def fastspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.command("slowspam", prefixes=f"{HNDLR}"))
+@sudo_users_only
 async def slowspam(client: Client, message: Message):
     quantity = message.command[1]
     spam_text = " ".join(message.command[2:])
