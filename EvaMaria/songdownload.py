@@ -303,7 +303,7 @@ async def vsong(client, message: Message):
             
             
             @Client.on_message(filters.command(["lyrics"], prefixes=f"{HNDLR}"))
-async def lyrics(_, message):
+async def lyrics(client, message: Message):
     try:
         if len(message.command) < 2:
             await message.reply_text("» **give a lyric name too.**")
