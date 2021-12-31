@@ -71,15 +71,6 @@ async def GM(client, m: Message):
 """
     await m.reply(GM)
 
-    @Client.on_message(filters.command(["volume"], prefixes=f"{HNDLR}"))
-async def volume(client, m: Message):
-    range = message.command[1]
-       await callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
-       await message.reply(f"✅ **Volume SetTo:** ```{range}%```")
-    except Exception as e:
-       await message.reply(f"Thất Bại")
-     
-            
 
 @Client.on_message(filters.command(["gay", "đút đít", "thông đít", "2 đứa con trai", "bê đê"], prefixes=f"{HNDLR}"))
 async def GE(client, m: Message):
