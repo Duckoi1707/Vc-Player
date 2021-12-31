@@ -72,7 +72,7 @@ async def GM(client, m: Message):
     await m.reply(GM)
 
     @Client.on_message(filters.command(["volume"], prefixes=f"{HNDLR}"))
-async def change_volume(client, message):
+async def volume(client, m: Message):
     range = message.command[1]
     chat_id = message.chat.id
     try:
