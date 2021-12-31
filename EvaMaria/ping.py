@@ -74,8 +74,6 @@ async def GM(client, m: Message):
     @Client.on_message(filters.command(["volume"], prefixes=f"{HNDLR}"))
 async def volume(client, m: Message):
     range = message.command[1]
-    chat_id = message.chat.id
-    try:
        await callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
        await message.reply(f"✅ **Volume SetTo:** ```{range}%```")
     except Exception as e:
